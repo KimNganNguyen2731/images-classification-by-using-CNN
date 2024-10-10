@@ -13,7 +13,7 @@ class ConvNet(nn.Module):
   def __init__(self, img_size: int = 32, in_channels: int = 3, out_channels:int = 64, output_classes: int = 10, kernel_size: int = 5, padding: int = 0, stride: int = 1):
     super(ConvNet,self).__init__()
     
-    self.conv1 = nn.Conv2d(in_channels = in_channels, out_channels = int(out_channels/2), kernel_size = kernel_size, padding = padding)
+    self.conv1 = nn.Conv2d(in_channels = in_channels, out_channels = int(out_channels/2), kernel_size = kernel_size, padding = padding, stride = stride)
     # output of self.conv1
     # output_size x output_size x out_channels (with output_channels of self.conv1)
     # 28x28x32
@@ -24,7 +24,7 @@ class ConvNet(nn.Module):
     # 14x14x32
     output_size = output_size/2 # stride of self.pool = 2
     
-    self.conv2 = nn.Conv2d(in_channels = int(out_channels/2), out_channels = out_channels, kernel_size = kernel_size, padding = padding)
+    self.conv2 = nn.Conv2d(in_channels = int(out_channels/2), out_channels = out_channels, kernel_size = kernel_size, padding = padding, stride = stride)
     # output_size after using self.conv2 and max pooling
     output_size = ((output_size - kernel_size + 2*padding)/stride + 1)/2
     self.in_features = int(output_size*output_size*out_channels)
