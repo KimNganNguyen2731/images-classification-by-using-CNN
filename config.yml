@@ -1,0 +1,12 @@
+model_config:
+- image_size: 32
+- in_channels: 3
+- out_channels: 64
+- output_classes: 10
+- kernel_size: 5
+- padding: 0
+- stride: 1
+
+train:
+- num_epochs: 100
+- learning_rate: 0.0001
