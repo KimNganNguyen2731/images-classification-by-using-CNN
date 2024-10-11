@@ -19,7 +19,7 @@ def main():
                  )
     
   train_loader, test_loader = dataloader()
-  trained_model = train(model = model, train_loader = train_loader, num_epochs = train_config["num_epochs"], learning_rate = train_config["lr"])
+  trained_model = train(model = model, train_loader = train_loader, num_epochs = train_config["num_epochs"], learning_rate = train_config["learning_rate"])
   test(model = trained_model, test_loader = test_loader)
 
 
