@@ -1,0 +1,4 @@
+PyYAML
+torch
+torchvision
+matplotlib
